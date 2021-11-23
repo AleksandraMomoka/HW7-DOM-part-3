@@ -1,25 +1,32 @@
-let input = document.getElementById('input');
-let ul = document.getElementById('list');
-let btn = document.getElementById('btn');
+let input = document.getElementById('input-pole-tasks');
+let list = document.getElementById('to-do-list');
+let btn = document.getElementById('btn-add-tasks');
+let task;
+let deletBtn;
 
-btn.addEventListener('click', addList);
-function addList(event) {
-    let li = document.createElement('li');
-    li.className = 'li';
-    li.innerHTML = input.value;
-    ul.append(li);
+function createElement(value) {
+    console.log(value);
+    task = document.createElement('li');
+    task.className = 'to-do-tasks';
+    task.innerHTML = input.value;
+    list.append(task);
     input.value = '';
+}
 
-    let deletBtn = document.createElement('button');
+btn.addEventListener('click', () => {
+    createElement(input.value);
+    deletBtn = document.createElement('button');
     deletBtn.className = 'deletBtn';
     deletBtn.textContent = 'x';
-    li.append(deletBtn);
+    task.append(deletBtn);
+});
 
-    deletBtn.addEventListener('click', () => {
-        li.remove();
-    })
-
-    li.addEventListener('click', (event) => {
-       event.target = li.classList.toggle('li-done');
-    })
-}
+list.addEventListener('click', (event) => {
+    if (event.target.className === 'deletBtn') {
+        let deletTask = event.target.parentNode;
+        deletTask.remove();
+    }
+    else {
+        event.target.classList.toggle('tasks-done');
+    } 
+});

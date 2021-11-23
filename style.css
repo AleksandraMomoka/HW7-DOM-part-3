@@ -35,7 +35,7 @@ body {
     min-width: 300px;
     border: 2px solid darkgreen;
 }
-#input {
+#input-pole-tasks {
     border: 2px solid darkgreen;
     width: 70%;
     height: 30px;
@@ -44,7 +44,7 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#btn {
+#btn-add-tasks {
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -67,10 +67,10 @@ body {
     border-radius: 10px;
     width: 80%;
 }
-#list {
+#to-do-list {
     list-style: none;
 }
-.li {
+.to-do-tasks {
     margin: 5px 0;
     background-color: green;
     width: 100%;
@@ -82,7 +82,7 @@ body {
     color: white;
 }
 
-.li-done {
+.tasks-done {
     background-color: rgba(245, 241, 6, 0.973);
     color: black;
 }
